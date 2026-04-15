@@ -18,8 +18,8 @@ $.getJSON(weatherAlertsUrl, function(data) {
     style: function(feature){
       var alertColor = 'orange';
       if (feature.properties.severity === 'Severe') alertColor = 'red';
-      if (feature.properties.severity === 'Extreme') alertColor = 'black';
-      if (feature.properties.severity === 'Minor') alertColor = 'blue';
+      else if (feature.properties.severity === 'Extreme') alertColor = 'black';
+      else if (feature.properties.severity === 'Minor') alertColor = 'blue';
       return { color: alertColor };
     },
     
